@@ -1,18 +1,17 @@
 package mainfx;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import mainfx.data.Student;
 import mainfx.service.StudentService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class MainController {
 
@@ -77,5 +76,17 @@ public class MainController {
 
     private void updateTable() {
         studentTable.setItems(FXCollections.observableArrayList(studentService.getStudents()));
+    }
+
+    public void exit() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Exit");
+        alert.setHeaderText("Are you sure you want to exit?");
+        alert.setContentText("All changes will be lost.");
+        Optional<ButtonType> buttonType = alert.showAndWait();
+        if (buttonType.get() != ButtonType.OK) {
+            return;
+        }
+        Platform.exit();
     }
 }

@@ -20,7 +20,7 @@
         <VBox BorderPane.alignment="CENTER">
             <MenuBar prefHeight="10.0" prefWidth="600.0">
                 <Menu mnemonicParsing="false" text="File">
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                    <MenuItem mnemonicParsing="false" text="Close" onAction="#exit"/>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                     <MenuItem mnemonicParsing="false" text="Delete" />
@@ -36,17 +36,28 @@
         </VBox>
     </top>
     <right>
-        <AnchorPane prefHeight="400.0" prefWidth="155.0" BorderPane.alignment="CENTER">
-            <Label layoutX="10.0" layoutY="10.0" text="id:" />
-            <TextField fx:id="idField" layoutX="10.0" layoutY="25.0" prefHeight="25.0" prefWidth="132.0" />
-            <Label layoutX="10.0" layoutY="55.0" text="Name:" />
-            <TextField fx:id="nameField" layoutX="10.0" layoutY="70.0" prefHeight="25.0" prefWidth="132.0" />
-            <Label layoutX="10.0" layoutY="100.0" text="Age:" />
-            <TextField fx:id="ageField" layoutX="10.0" layoutY="115.0" prefHeight="25.0" prefWidth="132.0" />
-            <Label layoutX="10.0" layoutY="145.0" text="Rating:" />
-            <TextField fx:id="ratingField" layoutX="10.0" layoutY="160.0" prefHeight="25.0" prefWidth="132.0" />
-            <Button layoutX="10.0" layoutY="188.0" mnemonicParsing="false" onAction="#addStudent" text="Додати" />
-            <Button layoutX="70.0" layoutY="188.0" mnemonicParsing="false" onAction="#deleteStudent" text="Видалити" />
-        </AnchorPane>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <Tab text="Add/Delete">
+                <AnchorPane prefHeight="400.0" prefWidth="155.0" BorderPane.alignment="CENTER">
+                    <Label layoutX="10.0" layoutY="10.0" text="id:" />
+                    <TextField fx:id="idField" layoutX="10.0" layoutY="25.0" prefHeight="25.0" prefWidth="132.0" />
+                    <Label layoutX="10.0" layoutY="55.0" text="Name:" />
+                    <TextField fx:id="nameField" layoutX="10.0" layoutY="70.0" prefHeight="25.0" prefWidth="132.0" />
+                    <Label layoutX="10.0" layoutY="100.0" text="Age:" />
+                    <TextField fx:id="ageField" layoutX="10.0" layoutY="115.0" prefHeight="25.0" prefWidth="132.0" />
+                    <Label layoutX="10.0" layoutY="145.0" text="Rating:" />
+                    <TextField fx:id="ratingField" layoutX="10.0" layoutY="160.0" prefHeight="25.0" prefWidth="132.0" />
+                    <Button layoutX="10.0" layoutY="188.0" mnemonicParsing="false" onAction="#addStudent" text="Додати" />
+                    <Button layoutX="70.0" layoutY="188.0" mnemonicParsing="false" onAction="#deleteStudent" text="Видалити" />
+                </AnchorPane>
+            </Tab>
+            <Tab text="Filters">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+            </Tab>
+        </TabPane>
+
     </right>
+   <left>
+
+   </left>
 </BorderPane>
