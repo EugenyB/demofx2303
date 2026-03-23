@@ -24,4 +24,8 @@ public class StudentService {
         Student student = new Student(id, name, age, rating);
         students.add(student);
     }
+
+    public void removeStudent(Student student) {
+        students.remove(student);
+    }
 }

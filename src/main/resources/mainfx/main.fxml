@@ -46,6 +46,7 @@
             <Label layoutX="10.0" layoutY="145.0" text="Rating:" />
             <TextField fx:id="ratingField" layoutX="10.0" layoutY="160.0" prefHeight="25.0" prefWidth="132.0" />
             <Button layoutX="10.0" layoutY="188.0" mnemonicParsing="false" onAction="#addStudent" text="Додати" />
+            <Button layoutX="70.0" layoutY="188.0" mnemonicParsing="false" onAction="#deleteStudent" text="Видалити" />
         </AnchorPane>
     </right>
 </BorderPane>

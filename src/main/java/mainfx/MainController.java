@@ -45,7 +45,7 @@ public class MainController {
         ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
         ratingColumn.setCellValueFactory(new PropertyValueFactory<>("rating"));
 
-        studentTable.setItems(FXCollections.observableArrayList(studentService.getStudents()));
+        updateTable();
     }
 
     public void about() {
@@ -64,6 +64,18 @@ public class MainController {
 
         studentService.addStudent(id, name, age, rating);
 
+        updateTable();
+    }
+
+    public void deleteStudent() {
+        Student student = studentTable.getSelectionModel().getSelectedItem();
+        if (student != null) {
+            studentService.removeStudent(student);
+            updateTable();
+        }
+    }
+
+    private void updateTable() {
         studentTable.setItems(FXCollections.observableArrayList(studentService.getStudents()));
     }
 }
